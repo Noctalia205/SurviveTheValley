@@ -8,10 +8,13 @@ public class Frederic : MonoBehaviour
     public Vector2 targetPosition;
     public Transform joueur;
     public float distanceToPlayer = 20;
+
+    private Animator animator;
+    public bool isActivated = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +25,12 @@ public class Frederic : MonoBehaviour
             Vector3 positionActuelle = transform.position;
             Vector3 positionCible = joueur.position;
             transform.position = Vector3.MoveTowards(positionActuelle, positionCible, speed * Time.deltaTime);
+            isActivated= true;
         }
+        else {
+            isActivated = false;
+        }
+        animator.SetBool("IsMoving", isActivated);
         
     }
     

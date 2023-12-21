@@ -9,8 +9,6 @@ public class player : MonoBehaviour
     public float vitesseDeplacement = 5f;
     private Rigidbody2D rb;
     private Vector3 echelleInitiale;
-    public Sprite idleSprite;
-    public Sprite movingSprite;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool isMoving = false;
