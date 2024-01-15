@@ -2009,6 +2009,7 @@ GameObject:
   - component: {fileID: 1053198528}
   - component: {fileID: 1053198527}
   - component: {fileID: 1053198526}
+  - component: {fileID: 1053198531}
   m_Layer: 0
   m_Name: BonnicheSquare
   m_TagString: Untagged
@@ -2026,7 +2027,7 @@ Animator:
   m_GameObject: {fileID: 1053198525}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba59bb7c03a6e4e479b2fa63757cc50e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2147,8 +2148,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1526878477
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2177,6 +2178,23 @@ Transform:
   - {fileID: 966864672}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053198531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053198525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21013812cb91294bac326154c059ce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  targetPosition: {x: 0, y: 0}
+  joueur: {fileID: 843313799}
+  distanceToPlayer: 20
+  isActivated: 0
 --- !u!1 &1252637458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,9 +2338,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288435754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: abaa77dffbf4e1741b0b2268c743753e, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3906,11 +3924,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9147353377720907910, guid: b12fd24dae6397f4487431d616b9176e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 9147353377720907910, guid: b12fd24dae6397f4487431d616b9176e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.53
+      value: 40.59
       objectReference: {fileID: 0}
     - target: {fileID: 9147353377720907910, guid: b12fd24dae6397f4487431d616b9176e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4006,7 +4024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7074481561982627992, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
       propertyPath: orthographic size
-      value: 4.8603477
+      value: 11.706731
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
