@@ -1738,8 +1738,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 152405337
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: df232a4a8dde87b4ab7af1b4cedfbb9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1912,6 +1912,90 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5357298388148164829, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
   m_PrefabInstance: {fileID: 7518171345215747253}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &857233585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 857233586}
+  - component: {fileID: 857233587}
+  m_Layer: 0
+  m_Name: flitre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &857233586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857233585}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.09, y: -0.179, z: 10}
+  m_LocalScale: {x: 1.1509196, y: 0.36133125, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7518171345215747254}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &857233587
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857233585}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1000567341
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 08f8b99ed1c95cf4e96777158fdc0c8d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.99215686}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 19.2, y: 10.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &966864671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,9 +2066,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1526878477
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ab956527f5562994db3bdd55f916b506, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3914,6 +3998,10 @@ PrefabInstance:
       propertyPath: joueur
       value: 
       objectReference: {fileID: 843313799}
+    - target: {fileID: 449261365381572151, guid: b12fd24dae6397f4487431d616b9176e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1208016885481201002, guid: b12fd24dae6397f4487431d616b9176e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.003
@@ -4024,13 +4112,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7074481561982627992, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
       propertyPath: orthographic size
-      value: 11.706731
+      value: 3.3971586
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4278654164103530050, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 857233586}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
+--- !u!4 &7518171345215747254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4278654164103530050, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
+  m_PrefabInstance: {fileID: 7518171345215747253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
