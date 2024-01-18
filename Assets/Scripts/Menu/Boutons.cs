@@ -20,4 +20,19 @@ public class Boutons : MonoBehaviour
     {
         SceneManager.LoadScene("game");
     }
+
+    public void Resume()
+    {
+        SceneManager.UnloadSceneAsync("pause");
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("menu");
+    }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

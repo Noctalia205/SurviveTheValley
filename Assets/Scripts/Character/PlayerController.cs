@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool isMoving = false;
+    private bool jeuEnPause = false;
     
 
     void Start()
@@ -60,7 +62,51 @@ public class player : MonoBehaviour
         //Idle Animation
         animator.SetBool("IsMoving", isMoving);
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            jeuEnPause = !jeuEnPause;
+
+            if (jeuEnPause)
+            {
+                AfficherPause();
+                
+            }
+            else
+            {
+                ReprendreJeu();
+                Time.timeScale = 1;
+            }
+        }
+
+        void AfficherPause()
+        {
+            Time.timeScale = 0; // Mettre en pause le temps
+            SceneManager.LoadScene("pause", LoadSceneMode.Additive);
+        }
+
+        void ReprendreJeu()
+        {
+            
+            Time.timeScale = 1; // Rétablir le temps
+            jeuEnPause = false;
+
+            SceneManager.UnloadSceneAsync("pause");
+            GameObject menuPause = GameObject.Find("MenuPause");
+            if (menuPause != null)
+            {
+                menuPause.SetActive(false);
+            }
+        }
+
+        
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.collider.CompareTag("Mob"))
+        {
+            SceneManager.LoadScene("gameOver");
+        }
+    }
 }
