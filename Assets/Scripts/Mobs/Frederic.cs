@@ -26,11 +26,12 @@ public class Frederic : MonoBehaviour
             Vector3 positionCible = joueur.position;
             transform.position = Vector3.MoveTowards(positionActuelle, positionCible, speed * Time.deltaTime);
             isActivated= true;
+            animator.SetBool("IsMoving", isActivated);
         }
         else {
             isActivated = false;
         }
-        animator.SetBool("IsMoving", isActivated);
+        
         
     }
     

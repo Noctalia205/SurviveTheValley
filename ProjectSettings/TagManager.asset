@@ -53,3 +53,9 @@ TagManager:
   - name: mob
     uniqueID: 2768088819
     locked: 0
+  - name: camera
+    uniqueID: 1000567341
+    locked: 0
+  - name: menu
+    uniqueID: 3020490571
+    locked: 0
