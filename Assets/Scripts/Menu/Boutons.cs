@@ -35,4 +35,14 @@ public class Boutons : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Help()
+    {
+        SceneManager.LoadScene("help");
+    }
+
+    public void Retour()
+    {
+        SceneManager.LoadScene("menu");
+    }
 }
