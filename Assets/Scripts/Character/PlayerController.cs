@@ -101,10 +101,10 @@ public class player : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.collider.CompareTag("Mob"))
+        if (collision.gameObject.CompareTag("Mob"))
         {
             SceneManager.LoadScene("gameOver");
         }
