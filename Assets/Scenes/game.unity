@@ -2184,7 +2184,7 @@ GameObject:
   - component: {fileID: 966864673}
   m_Layer: 0
   m_Name: bonniche
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5354,6 +5354,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 881927436623037438, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8035892
+      objectReference: {fileID: 0}
+    - target: {fileID: 881927436623037438, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.8211735
+      objectReference: {fileID: 0}
+    - target: {fileID: 881927436623037438, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2734006438123288500, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
       propertyPath: m_Enabled
       value: 0
