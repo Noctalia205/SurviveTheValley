@@ -57,6 +57,9 @@ TagManager:
   - name: camera
     uniqueID: 1000567341
     locked: 0
-  - name: menu
+  - name: nuit
     uniqueID: 3020490571
+    locked: 0
+  - name: menu
+    uniqueID: 2329373803
     locked: 0
