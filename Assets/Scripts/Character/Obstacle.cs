@@ -18,7 +18,6 @@ public class Obstacle: MonoBehaviour
                     SceneManager.LoadScene("gameOver");
                 }
             }
-            Debug.Log("GIROUD NTM");
         }
     }
 
