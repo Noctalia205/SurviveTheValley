@@ -8,6 +8,7 @@ TagManager:
   - player
   - mainChar
   - interactuable
+  - item
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - joueur
+  - interactuable
   - 
   - 
   - 
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: menu
     uniqueID: 3020490571
+    locked: 0
+  - name: interactuable
+    uniqueID: 102222177
     locked: 0
