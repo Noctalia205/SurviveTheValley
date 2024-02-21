@@ -2,19 +2,18 @@
 using UnityEngine;
 using System.Collections;
 public class Obstacle : MonoBehaviour
+
 {
     public float interactionRadius = 2f; // Rayon de proximité pour interagir avec l'objet
     public KeyCode interactionKey = KeyCode.E; // Touche pour l'interaction
     private bool isInRange = false;
-    public GameObject cube; // Référence au cube à faire apparaître/disparaître
-    public int nbPressionBouton = 0;
 
     private void Update()
     {
-        // Vérifie si le joueur est dans la zone d'interaction et appuie sur la touche d'interaction
         if (isInRange && Input.GetKeyDown(interactionKey))
         {
             Debug.Log("GIROUD NTM");
+
             nbPressionBouton ++;
             if (nbPressionBouton == 4)
             {
@@ -47,6 +46,8 @@ public class Obstacle : MonoBehaviour
 
             // Réactive le cube à la fin de la séquence de répétitions
         cube.SetActive(true);
+
         }
     }
 }
+
