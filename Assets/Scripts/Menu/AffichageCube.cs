@@ -7,11 +7,18 @@ public class AffichageCube : MonoBehaviour
     private bool isInRange = false;
     public GameObject cube; // Référence au cube à faire apparaître/disparaître
 
+    public int nbPressionBoutons = 0;
+
     private void Update()
     {
         // Vérifie si le joueur est dans la zone d'interaction et appuie sur la touche d'interaction
         if (isInRange && Input.GetKeyDown(interactionKey))
         {
+            nbPressionBoutons ++;
+            if (nbPressionBoutons == 4)
+            {
+                Debug.Log("Omg y a Bonnie");
+            }
             // Lance la coroutine pour faire réapparaître et disparaître le cube
             StartCoroutine(ShowAndHideCubeRepeatedly());
         }
@@ -19,8 +26,8 @@ public class AffichageCube : MonoBehaviour
 
     IEnumerator ShowAndHideCubeRepeatedly()
     {
-        int numRepeats = 5; // Nombre de répétitions (à ajuster selon vos besoins)
-        float interval = 0.2f; // Intervalle entre chaque répétition (en secondes)
+        int numRepeats = 10; // Nombre de répétitions (à ajuster selon vos besoins)
+        float interval = 0.1f; // Intervalle entre chaque répétition (en secondes)
 
         for (int i = 0; i < numRepeats; i++)
         {
