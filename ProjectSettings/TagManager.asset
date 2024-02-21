@@ -8,7 +8,6 @@ TagManager:
   - player
   - mainChar
   - interactuable
-  - item
   layers:
   - Default
   - TransparentFX
@@ -16,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - joueur
-  - interactuable
+  - 
+  - 
   - 
   - 
   - 
@@ -58,9 +57,9 @@ TagManager:
   - name: camera
     uniqueID: 1000567341
     locked: 0
-  - name: menu
+  - name: nuit
     uniqueID: 3020490571
     locked: 0
-  - name: interactuable
-    uniqueID: 102222177
+  - name: menu
+    uniqueID: 2329373803
     locked: 0
