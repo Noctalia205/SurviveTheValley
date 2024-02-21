@@ -56,5 +56,25 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "SurviveTheValley.sln"
+    "dotnet.defaultSolution": "SurviveTheValley.sln",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#15202b",
+        "activityBar.background": "#15202b99",
+        "activityBar.foreground": "#5088c0",
+        "activityBar.inactiveForeground": "#7596b699",
+        "activityBarBadge.background": "#8a9f00",
+        "activityBarBadge.foreground": "#15202b",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#ffd2f9",
+        "statusBar.background": "#15202b",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#15202b",
+        "statusBarItem.remoteBackground": "#15202b",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#15202b",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#ff9ff399",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#ff9ff3"
 }
