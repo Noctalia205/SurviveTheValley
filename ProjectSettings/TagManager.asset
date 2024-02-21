@@ -8,14 +8,15 @@ TagManager:
   - player
   - mainChar
   - interactuable
+  - item
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - joueur
   - Water
   - UI
-  - 
+  - inter
   - 
   - 
   - 
