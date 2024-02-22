@@ -7,7 +7,20 @@ public class AffichageCube : MonoBehaviour
     private bool isInRange = false;
     public GameObject cube; // Référence au cube à faire apparaître/disparaître
 
+    private AudioSource audioSource;
+
+    // Fichier audio à jouer
+    public AudioClip audioClip;
+
     public int nbPressionBoutons = 0;
+
+    public void Start(){
+        audioSource = GetComponent<AudioSource>();
+
+        // Affecter le fichier audio à l'AudioSource
+        audioSource.clip = audioClip;
+
+    }
 
     private void Update()
     {
@@ -15,6 +28,7 @@ public class AffichageCube : MonoBehaviour
         if (isInRange && Input.GetKeyDown(interactionKey))
         {
             nbPressionBoutons ++;
+            audioSource.Play();
             if (nbPressionBoutons == 4)
             {
                 Debug.Log("Omg y a Bonnie");
