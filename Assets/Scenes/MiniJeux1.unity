@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 44481264}
   - component: {fileID: 44481263}
   m_Layer: 0
-  m_Name: lumiere eteinte (1)
+  m_Name: noir3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1897,7 +1897,7 @@ GameObject:
   - component: {fileID: 985287683}
   - component: {fileID: 985287682}
   m_Layer: 0
-  m_Name: lumiere eteinte (3)
+  m_Name: noir4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1981,7 +1981,7 @@ GameObject:
   - component: {fileID: 1035210483}
   - component: {fileID: 1035210482}
   m_Layer: 0
-  m_Name: lumiere eteinte (2)
+  m_Name: noir2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3490,7 +3490,7 @@ GameObject:
   - component: {fileID: 1812385488}
   - component: {fileID: 1812385487}
   m_Layer: 0
-  m_Name: lumiere eteinte
+  m_Name: noir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
