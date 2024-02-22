@@ -78,6 +78,8 @@ public class player : MonoBehaviour
             }
         }
 
+        
+
         void AfficherPause()
         {
             Time.timeScale = 0; // Mettre en pause le temps
@@ -98,15 +100,29 @@ public class player : MonoBehaviour
             }
         }
 
-        
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.CompareTag("interactuable") )
+        {
+            SceneManager.LoadScene("gameOver");
+        }
         
-        if (collision.collider.CompareTag("Mob"))
+        if (collision.gameObject.CompareTag("Mob"))
         {
             SceneManager.LoadScene("gameOver");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Vérifie si le joueur entre en collision avec cet obstacle
+        if (other.CompareTag("interactuable"))
+        {
+            // Faites quelque chose lorsque le joueur entre en collision avec cet obstacle
+            Debug.Log("Le joueur a rencontré un obstacle !");
+        }
+    }
+
 }
