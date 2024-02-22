@@ -14,6 +14,9 @@ public class player : MonoBehaviour
     private Animator animator;
     private bool isMoving = false;
     private bool jeuEnPause = false;
+    private AudioSource audioSource;
+
+    public AudioClip audioClip;
     
 
     void Start()
@@ -22,6 +25,9 @@ public class player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        CheckMovement();
     }
 
     // Update is called once per frame
@@ -99,9 +105,24 @@ public class player : MonoBehaviour
                 menuPause.SetActive(false);
             }
         }
+        CheckMovement();
 
     }
-
+    void CheckMovement()
+    {
+        // Si l'objet est en mouvement et que l'audio n'est pas déjà en train de jouer
+        if (isMoving && !audioSource.isPlaying)
+        {
+            // Jouer l'audio
+            audioSource.Play();
+        }
+        // Si l'objet n'est pas en mouvement et que l'audio est en train de jouer
+        else if (!isMoving && audioSource.isPlaying)
+        {
+            // Arrêter l'audio
+            audioSource.Stop();
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.CompareTag("interactuable") )
