@@ -8,7 +8,7 @@ public class PassageMiniJeux : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ShowImageForDuration(5f));
+        StartCoroutine(ShowImageForDuration(9f));
     }
 
     // Update is called once per frame

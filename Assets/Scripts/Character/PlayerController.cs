@@ -15,7 +15,6 @@ public class player : MonoBehaviour
     private bool isMoving = false;
     private bool jeuEnPause = false;
     private AudioSource audioSource;
-
     public AudioClip audioClip;
     
 
@@ -28,6 +27,20 @@ public class player : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioClip;
         CheckMovement();
+
+         StartCoroutine(StartDelay());
+    }
+
+    IEnumerator StartDelay()
+    {
+        // Désactiver le mouvement du joueur
+        enabled = false;
+
+        // Attendre 2 secondes
+        yield return new WaitForSeconds(4f);
+
+        // Activer le mouvement du joueur
+        enabled = true;
     }
 
     // Update is called once per frame
