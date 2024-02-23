@@ -44,7 +44,6 @@ public class AffichageCube : MonoBehaviour
                 audioSource.Play();
                 if (nbPressionBoutons == 4)
                 {
-                    Debug.Log("Omg y a Bonnie");
                     // Afficher le sprite du mob
                     mobSprite.SetActive(true);
 
