@@ -6035,7 +6035,7 @@ PrefabInstance:
     - target: {fileID: 7371878313872356612, guid: b12fd24dae6397f4487431d616b9176e, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: a507895d71afbff40b258d50c7128c61, type: 2}
     - target: {fileID: 7949621200291945102, guid: b12fd24dae6397f4487431d616b9176e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6117,6 +6117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: joueur
       objectReference: {fileID: 0}
+    - target: {fileID: 4676321508679673033, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e79a55df9406e5a44a6194d9fc27f7a3, type: 2}
     - target: {fileID: 5357298388148164829, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.66
@@ -6159,7 +6163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7074481561982627992, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
       propertyPath: orthographic size
-      value: 3.3971586
+      value: 8.14418
       objectReference: {fileID: 0}
     - target: {fileID: 8149619498968381359, guid: bc2b62e066e814d4ebae654ea2ca0773, type: 3}
       propertyPath: audioClip
