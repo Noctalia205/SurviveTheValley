@@ -8,13 +8,21 @@ public class PassageMiniJeux : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
         StartCoroutine(ShowImageForDuration(9f));
+=======
+        StartCoroutine(ShowImageForDuration(5f));
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
     }
     IEnumerator ShowImageForDuration(float duration)
     {
@@ -24,4 +32,8 @@ public class PassageMiniJeux : MonoBehaviour
         SceneManager.LoadScene("MiniJeux1");
 
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
