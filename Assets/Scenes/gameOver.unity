@@ -348,10 +348,7 @@ GameObject:
   - component: {fileID: 1406676962}
   - component: {fileID: 1406676961}
   - component: {fileID: 1406676964}
-<<<<<<< Updated upstream
   - component: {fileID: 1406676965}
-=======
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -440,7 +437,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406676960}
-<<<<<<< Updated upstream
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef0e732b314ca5049b45a524a33c9124, type: 3}
@@ -542,13 +538,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 910ee177ff2374b1596a0a48def6036a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> Stashed changes
 --- !u!1 &1576046869
 GameObject:
   m_ObjectHideFlags: 0
