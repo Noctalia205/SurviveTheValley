@@ -17,15 +17,13 @@ public class AffichageCube : MonoBehaviour
 
     // Fichier audio à jouer
     public AudioClip audioClip;
+    public AudioClip blackScreenAudioClip; // Deuxième AudioClip pour l'appel du black screen
 
     public int nbPressionBoutons = 0;
 
     public void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
-        // Affecter le fichier audio à l'AudioSource
-        audioSource.clip = audioClip;
 
         // Désactiver le sprite du mob au début
         mobSprite.SetActive(false);
@@ -41,6 +39,7 @@ public class AffichageCube : MonoBehaviour
             if (Input.GetKeyDown(interactionKey) && Time.time - lastInteractionTime > 2f)
             {
                 nbPressionBoutons++;
+                audioSource.clip = audioClip; // Utilise le premier AudioClip par défaut
                 audioSource.Play();
                 if (nbPressionBoutons == 4)
                 {
@@ -99,6 +98,11 @@ public class AffichageCube : MonoBehaviour
 
         // Activer l'écran noir
         blackScreen.SetActive(true);
+
+        // Utilise le deuxième AudioClip pour l'appel du black screen
+        audioSource.clip = blackScreenAudioClip;
+        // Joue l'audio pour le black screen
+        audioSource.Play();
 
         // Attendre 5 secondes avant de charger la scène du menu
         yield return new WaitForSeconds(5f);
