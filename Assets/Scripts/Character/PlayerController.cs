@@ -145,7 +145,7 @@ public class player : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Mob"))
         {
-            SceneManager.LoadScene("gameOver");
+            SceneManager.LoadScene("ScreamerDeath");
         }
     }
 
