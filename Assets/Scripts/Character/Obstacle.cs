@@ -14,7 +14,8 @@ public class Obstacle: MonoBehaviour
         {
             if (gameObject.CompareTag("item")){
                 nbItems += 1;
-                if (nbItems >= 1){
+                gameObject.SetActive(false);
+                if (nbItems >= 3){
                     SceneManager.LoadScene("Victory");
                 }
             }
