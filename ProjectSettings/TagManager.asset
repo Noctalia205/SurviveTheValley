@@ -9,6 +9,9 @@ TagManager:
   - mainChar
   - interactuable
   - item
+  - tpFred
+  - bcBon
+  - bcBon1
   layers:
   - Default
   - TransparentFX

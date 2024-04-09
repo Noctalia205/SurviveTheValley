@@ -16,6 +16,8 @@ public class player : MonoBehaviour
     private bool jeuEnPause = false;
     private AudioSource audioSource;
     public AudioClip audioClip;
+    public int nbItems = 0;
+
     
 
     void Start()
@@ -119,7 +121,6 @@ public class player : MonoBehaviour
             }
         }
         CheckMovement();
-
     }
     void CheckMovement()
     {

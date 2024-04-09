@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Frederic : MonoBehaviour
+public class Bonniche : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float vitesseDeplacement = 5f;
     public Vector2 targetPosition;
     public Transform joueur;
     public float distanceToPlayer = 20;
     private Animator animator;
     public bool isActivated = false;
     public float delayTime = 5f;
-    public string tagObjets;
+    public List<string> tagsObjets;
     private bool timerStarted = false;
     private AudioSource audioSource;
     public AudioClip audioClip;
+    private Vector3 positionInitiale;
     
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class Frederic : MonoBehaviour
         if (distance <= distanceToPlayer){
             Vector3 positionActuelle = transform.position;
             Vector3 positionCible = joueur.position;
-            transform.position = Vector3.MoveTowards(positionActuelle, positionCible, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(positionActuelle, positionCible, vitesseDeplacement * Time.deltaTime);
             isActivated= true;
             animator.SetBool("IsMoving", isActivated);
         }
@@ -55,7 +56,8 @@ public class Frederic : MonoBehaviour
     {
         if (!isActivated)
         {
-            GameObject[] objetsAvecTag = GameObject.FindGameObjectsWithTag(tagObjets);
+            string tagChoisi = tagsObjets[Random.Range(0, tagsObjets.Count)];
+            GameObject[] objetsAvecTag = GameObject.FindGameObjectsWithTag(tagChoisi);
 
             if (objetsAvecTag.Length > 0)
             {
@@ -63,27 +65,38 @@ public class Frederic : MonoBehaviour
                 int index = Random.Range(0, objetsAvecTag.Length);
                 GameObject objetChoisi = objetsAvecTag[index];
 
-                // Téléportation de cet objet
-                Teleporter(objetChoisi.transform.position);
+                // Déplacer l'objet vers la position de l'objet choisi
+                positionInitiale = transform.position;
+                Vector3 positionFinale = objetChoisi.transform.position;
+                StartCoroutine(DeplacerObjet(positionFinale));
                 if (audioClip != null && audioSource != null)
                 {
                     audioSource.PlayOneShot(audioClip);
                 }
-            }
+                }
             else
             {
-                Debug.LogWarning("Aucun objet avec le tag '" + tagObjets + "' trouvé !");
+                Debug.LogWarning("Aucun objet avec le tag '" + tagChoisi + "' trouvé !");
             }
         }
     }
 
-    void Teleporter(Vector3 newPosition)
+    IEnumerator DeplacerObjet(Vector3 positionFinale)
     {
-        if (!isActivated)
+        float distanceTotale = Vector3.Distance(positionInitiale, positionFinale);
+        float tempsDeDeplacement = distanceTotale / vitesseDeplacement;
+        float tempsPasse = 0f;
+
+        while (tempsPasse < tempsDeDeplacement)
         {
-            transform.position = newPosition;
-            Debug.Log("Téléportation effectuée vers : " + newPosition);
+            tempsPasse += Time.deltaTime;
+            float ratio = Mathf.Clamp01(tempsPasse / tempsDeDeplacement);
+            transform.position = Vector3.Lerp(positionInitiale, positionFinale, ratio);
+            yield return null;
         }
+
+        transform.position = positionFinale;
+        Debug.Log("Déplacement terminé !");
     }
     
 }

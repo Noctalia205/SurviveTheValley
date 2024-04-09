@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Obstacle: MonoBehaviour
 {
-    public float interactionRadius = 2f; // Rayon de proximitÃ© pour interagir avec l'objet
+    public float interactionRadius = 2f; // Rayon de proximité pour interagir avec l'objet
     public KeyCode interactionKey = KeyCode.E; // Touche pour l'interaction
     private bool isInRange = false;
     public int nbItems = 0;
@@ -13,11 +13,12 @@ public class Obstacle: MonoBehaviour
         if (isInRange && Input.GetKeyDown(interactionKey))
         {
             if (gameObject.CompareTag("item")){
-                nbItems += 1;
-                gameObject.SetActive(false);
-                if (nbItems >= 3){
+                nbItems ++;
+                Debug.Log("item trouver" + nbItems);
+                if (nbItems == 3){
                     SceneManager.LoadScene("Victory");
                 }
+                gameObject.SetActive(false);
             }
         }
     }
