@@ -14,6 +14,7 @@ public class Bonniche : MonoBehaviour
     public Transform[] waypoints;
     private AudioSource audioSource;
     public AudioClip audioClip;
+    
     private Vector3 positionInitiale;
     private int currentWaypointIndex = 0;
     
@@ -33,6 +34,10 @@ public class Bonniche : MonoBehaviour
             Vector3 positionCible = joueur.position;
             transform.position = Vector3.MoveTowards(positionActuelle, positionCible, vitesseDeplacement * Time.deltaTime);
             isActivated= true;
+            if (audioClip != null && !audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(audioClip);
+            }
             animator.SetBool("IsMoving", isActivated);
         }
         else {

@@ -151,7 +151,7 @@ public class Player : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Mob"))
         {
-            SceneManager.LoadScene("gameOver");
+            SceneManager.LoadScene("screemer");
         }
     }
 

@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniJeux1.unity
     guid: 26a110bd108b44868a916e29dcb1b80b
+  - enabled: 1
+    path: Assets/Scenes/screemer.unity
+    guid: e92d6424ad65b72478bb1ec7bdedcaaa
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a70b19b09de5bc74eb6277a6d9ca837d, type: 2}
