@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -16,6 +16,8 @@ public class player : MonoBehaviour
     private bool jeuEnPause = false;
     private AudioSource audioSource;
     public AudioClip audioClip;
+    public int nbItems = 0;
+
     
 
     void Start()
@@ -120,6 +122,10 @@ public class player : MonoBehaviour
         }
         CheckMovement();
 
+        if (nbItems >= 3)
+        {
+            SceneManager.LoadScene("Victory"); // Charge la scène "Victory"
+        }
     }
     void CheckMovement()
     {
@@ -145,7 +151,7 @@ public class player : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Mob"))
         {
-            SceneManager.LoadScene("gameOver");
+            SceneManager.LoadScene("screemer");
         }
     }
 
