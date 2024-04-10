@@ -15,6 +15,7 @@ public class Frederic : MonoBehaviour
     private bool timerStarted = false;
     private AudioSource audioSource;
     public AudioClip audioClip;
+    public AudioClip audioFind;
     
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class Frederic : MonoBehaviour
             Vector3 positionCible = joueur.position;
             transform.position = Vector3.MoveTowards(positionActuelle, positionCible, speed * Time.deltaTime);
             isActivated= true;
+            audioSource.PlayOneShot(audioFind);
             animator.SetBool("IsMoving", isActivated);
         }
         else {

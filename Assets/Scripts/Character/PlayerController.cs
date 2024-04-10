@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -121,6 +121,11 @@ public class player : MonoBehaviour
             }
         }
         CheckMovement();
+
+        if (nbItems >= 3)
+        {
+            SceneManager.LoadScene("Victory"); // Charge la scène "Victory"
+        }
     }
     void CheckMovement()
     {

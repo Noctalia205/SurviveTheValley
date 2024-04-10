@@ -11,11 +11,11 @@ public class Bonniche : MonoBehaviour
     private Animator animator;
     public bool isActivated = false;
     public float delayTime = 5f;
-    public List<string> tagsObjets;
-    private bool timerStarted = false;
+    public Transform[] waypoints;
     private AudioSource audioSource;
     public AudioClip audioClip;
     private Vector3 positionInitiale;
+    private int currentWaypointIndex = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -39,64 +39,26 @@ public class Bonniche : MonoBehaviour
             isActivated = false;
         }
         
-        if (!timerStarted){
-            StartCoroutine(StartTimer());
-            ChoisirObjetAleatoire();
-        }
-    }
+        
 
-    IEnumerator StartTimer()
-    {
-        timerStarted = true;
-        yield return new WaitForSeconds(delayTime);
-        timerStarted = false;
-    }
-
-    void ChoisirObjetAleatoire()
-    {
-        if (!isActivated)
+        if (currentWaypointIndex < waypoints.Length)
         {
-            string tagChoisi = tagsObjets[Random.Range(0, tagsObjets.Count)];
-            GameObject[] objetsAvecTag = GameObject.FindGameObjectsWithTag(tagChoisi);
+            // Déplacez l'objet vers la balise actuelle
+            transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, vitesseDeplacement * Time.deltaTime);
 
-            if (objetsAvecTag.Length > 0)
+            // Si l'objet est proche de la balise actuelle, passez à la suivante
+            if (Vector2.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
             {
-                // Choix aléatoire d'un objet dans le tableau
-                int index = Random.Range(0, objetsAvecTag.Length);
-                GameObject objetChoisi = objetsAvecTag[index];
+                currentWaypointIndex++;
 
-                // Déplacer l'objet vers la position de l'objet choisi
-                positionInitiale = transform.position;
-                Vector3 positionFinale = objetChoisi.transform.position;
-                StartCoroutine(DeplacerObjet(positionFinale));
-                if (audioClip != null && audioSource != null)
+                // Si nous avons atteint la dernière balise, réinitialisez l'indice pour boucler
+                if (currentWaypointIndex >= waypoints.Length)
                 {
-                    audioSource.PlayOneShot(audioClip);
+                    currentWaypointIndex = 0;
                 }
-                }
-            else
-            {
-                Debug.LogWarning("Aucun objet avec le tag '" + tagChoisi + "' trouvé !");
             }
-        }
+        } 
     }
 
-    IEnumerator DeplacerObjet(Vector3 positionFinale)
-    {
-        float distanceTotale = Vector3.Distance(positionInitiale, positionFinale);
-        float tempsDeDeplacement = distanceTotale / vitesseDeplacement;
-        float tempsPasse = 0f;
-
-        while (tempsPasse < tempsDeDeplacement)
-        {
-            tempsPasse += Time.deltaTime;
-            float ratio = Mathf.Clamp01(tempsPasse / tempsDeDeplacement);
-            transform.position = Vector3.Lerp(positionInitiale, positionFinale, ratio);
-            yield return null;
-        }
-
-        transform.position = positionFinale;
-        Debug.Log("Déplacement terminé !");
-    }
     
 }
